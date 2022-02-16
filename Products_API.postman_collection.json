@@ -7,9 +7,32 @@
 	"item": [
 		{
 			"name": "Get_All_Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
 			},
 			"response": []
 		},
@@ -18,6 +41,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"title\": \"Antidote\",\r\n        \"description\": \"Cures poisoning\",\r\n        \"price\": 100.0,\r\n        \"inventory_quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/products/",
 					"protocol": "http",
@@ -41,17 +73,9 @@
 			"name": "Get_Product_By_Id",
 			"request": {
 				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Update_Product",
-			"request": {
-				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/products/3/",
+					"raw": "http://127.0.0.1:8000/api/products/1/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -63,7 +87,41 @@
 					"path": [
 						"api",
 						"products",
-						"3",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Potion\",\r\n    \"description\": \"Heals 20 HP\",\r\n    \"price\": 300.0,\r\n    \"inventory_quantity\": 12,\r\n    \"image_link\": \"https://archives.bulbagarden.net/media/upload/d/df/Dream_Potion_Sprite.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1",
 						""
 					]
 				}
